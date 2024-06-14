@@ -12,7 +12,7 @@ const Backup = async () => {
   const date = new Date(Date.now());
   await BackupToolkit.backup(
     process.env.MONGO_URI,
-    `./dumbs/dumb_${date.getFullYear()}-${
+    `./dumps/dump_${date.getFullYear()}-${
       date.getMonth() + 1
     }-${date.getDate()}_${date.getHours()}H${date.getMinutes()}/`
   );
