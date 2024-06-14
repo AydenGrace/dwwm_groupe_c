@@ -12,6 +12,8 @@ const cottageRoutes = require("./Cottage/cottage");
 const reservationRoutes = require("./Cottage/reservation");
 const tagRoutes = require("./Cottage/tag");
 
+const giftcardRoutes = require("./Reduction/giftcard");
+
 router.use("/users", userRoutes);
 router.use("/trophy", trophyRoutes);
 router.use("/interest", interestRoutes);
@@ -23,5 +25,7 @@ router.use("/respond", respondRoutes);
 router.use("/cottage", cottageRoutes);
 router.use("/reservation", reservationRoutes);
 router.use("/tag", tagRoutes);
+
+router.use("/giftcard", giftcardRoutes);
 
 module.exports = router;
