@@ -28,18 +28,15 @@ describe("Database", () => {
       request(app)
         .post("/users/signin")
         .send({
-          email: "pa.ce.hepl@gmail.com",
-          password: "Crapie110597#@&",
+          email: "paptc.cgm@gmail.com",
+          password: "AbCd1234#@&",
         })
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function (err, res) {
           if (err) return done(res.body.error);
-          assert.notEqual(
-            res.body.message,
-            "Mauvais pseudo et/ou mot de passe"
-          );
+          assert.notEqual(res.body.message, "Mauvais Email et/ou Password");
           return done();
         });
     });
@@ -48,7 +45,7 @@ describe("Database", () => {
       request(app)
         .get("/users/get")
         .send({
-          email: "pa.ce.hepl@gmail.com",
+          email: "paptc.cgm@gmail.com",
         })
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
