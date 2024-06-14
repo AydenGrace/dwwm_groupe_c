@@ -1,4 +1,7 @@
 const User = require("../../models/User/user.schema");
+const Trophy = require("../../models/User/trophy.schema");
+const Language = require("../../models/User/language.schema");
+const Interest = require("../../models/User/interest.schema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {
@@ -7,14 +10,17 @@ const {
   sendInvalidEmailToken,
   sendResetPassword,
   sendPasswordChanged,
+  sendDeletedAccountConfirmation,
+  sendInvalidDeleteToken,
+  sendDeleteAccountDemand,
 } = require("../../email/email");
 
 const createTokenEmail = (email) => {
-  return jwt.sign({ email }, process.env.SECRET, { expiresIn: "60s" });
+  return jwt.sign({ email }, process.env.SECRET, { expiresIn: "30m" });
 };
 
 const createTokenResetPassword = (email) => {
-  return jwt.sign({ email }, process.env.SECRET, { expiresIn: "2m" });
+  return jwt.sign({ email }, process.env.SECRET, { expiresIn: "30m" });
 };
 
 const createTokenLogin = (_id) => {
@@ -77,6 +83,60 @@ const verifyMail = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+const demandDeleteAccount = async (req, res) => {
+  const { _id } = req.body;
+  try {
+    const user = await User.findOne({ _id });
+    if (!user) {
+      res.status(400).json({ message: "User not found" });
+      return;
+    }
+    user.delete_token = createTokenEmail(user.email);
+    await User.findOneAndUpdate(
+      { _id: user._id },
+      { delete_token: createTokenEmail(user.email) }
+    );
+    await sendDeleteAccountDemand(user.email, user.delete_token);
+    res.json({
+      message: "Merci de confirmer la suppression de votre compte par mail.",
+    });
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
+};
+
+const deleteAccount = async (req, res) => {
+  const token = req.params.token;
+
+  const isTokenNull = await User.findOne({ delete_token: token });
+  const decoded = jwt.verify(token, process.env.SECRET, {
+    ignoreExpiration: true,
+  });
+  console.log(decoded.exp * 1000);
+  console.log(new Date().getTime());
+  try {
+    if (!isTokenNull) {
+      res.status(400).json({ message: "Token déja validé" });
+      return;
+    }
+    if (decoded.exp * 1000 > new Date().getTime()) {
+      await User.findOneAndDelete({ email: decoded.email });
+      await sendDeletedAccountConfirmation(decoded.email);
+      res.json({ message: "Suppression confirmée avec succès" });
+    } else {
+      await User.findOneAndUpdate(
+        { email: decoded.email },
+        { delete_token: null }
+      );
+      await sendInvalidDeleteToken(decoded.email);
+      res.status(400).json({ message: "Token invalide ou expiré" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: error });
   }
 };
 
@@ -179,6 +239,108 @@ const changePwdAsConnected = async (req, res) => {
   }
 };
 
+const addTrophy = async (req, res) => {
+  const { _id, trophyId } = req.body;
+  try {
+    const isTrophyExist = await Trophy.findOne({ _id: trophyId });
+    if (!isTrophyExist) {
+      res.status(500).json({ message: "Trophy not found" });
+      return;
+    }
+    const isUserExist = await User.findOne({ _id }).populate("trophies");
+    if (!isUserExist) {
+      res.status(500).json({ message: "User not found" });
+      return;
+    }
+    if (isUserExist.trophies.some((trophy) => trophy.equals(trophyId))) {
+      res.status(500).json({ message: "Trophy already won" });
+      return;
+    }
+    const userUpdated = await User.findOneAndUpdate(
+      { _id },
+      { $push: { trophies: trophyId } }
+    );
+    res.json(userUpdated);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: error.message });
+  }
+};
+
+const addInterest = async (req, res) => {
+  const { _id, interestId } = req.body;
+  try {
+    const isInterestExist = await Interest.findOne({ _id: interestId });
+    if (!isInterestExist) {
+      res.status(500).json({ message: "Trophy not found" });
+      return;
+    }
+    const isUserExist = await User.findOne({ _id }).populate("interests");
+    if (!isUserExist) {
+      res.status(500).json({ message: "User not found" });
+      return;
+    }
+    if (isUserExist.interests.some((interest) => interest.equals(interestId))) {
+      res.status(500).json({ message: "Interest already added" });
+      return;
+    }
+    const userUpdated = await User.findOneAndUpdate(
+      { _id },
+      { $push: { interests: interestId } }
+    );
+    res.json(userUpdated);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: error.message });
+  }
+};
+
+const addLanguage = async (req, res) => {
+  const { _id, languageId } = req.body;
+  try {
+    const isLanguageExist = await Language.findOne({ _id: languageId });
+    if (!isLanguageExist) {
+      res.status(500).json({ message: "Language not found" });
+      return;
+    }
+    const isUserExist = await User.findOne({ _id }).populate("languages");
+    if (!isUserExist) {
+      res.status(500).json({ message: "User not found" });
+      return;
+    }
+    if (isUserExist.languages.some((lang) => lang.equals(languageId))) {
+      res.status(500).json({ message: "Language already added" });
+      return;
+    }
+    const userUpdated = await User.findOneAndUpdate(
+      { _id },
+      { $push: { languages: languageId } }
+    );
+    res.json(userUpdated);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: error.message });
+  }
+};
+
+const getbyEmail = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const userToFind = await User.findOne({ email })
+      .populate("trophies")
+      .populate("interests")
+      .populate("languages");
+    if (!userToFind) {
+      res.status(500).json({ message: "User not found" });
+      return;
+    }
+    res.json(userToFind);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: error.message });
+  }
+};
+
 module.exports = {
   signupUser,
   verifyMail,
@@ -186,4 +348,10 @@ module.exports = {
   forgotPwd,
   changePwd,
   changePwdAsConnected,
+  demandDeleteAccount,
+  deleteAccount,
+  addTrophy,
+  getbyEmail,
+  addInterest,
+  addLanguage,
 };

@@ -13,7 +13,7 @@ const sendConfirmationEmail = async (email, token) => {
     from: process.env.EMAIL_USER,
     to: email,
     subject: "Confirmation d'inscription",
-    html: `<p>Merci de vous êtes inscrit ! Cliquez sur le lien suivant pour confirmer l'inscription : <a href="http://localhost:5000/api/users/verifyMail/${token}">Confirmer l'inscription</a></p>`,
+    html: `<p>Merci de vous êtes inscrit ! Cliquez sur le lien suivant pour confirmer l'inscription : <a href="http://localhost:5000/users/verifyMail/${token}">Confirmer l'inscription</a></p>`,
   };
 
   await transporter.sendMail(mailOptions);
@@ -63,10 +63,46 @@ const sendPasswordChanged = async (email) => {
   await transporter.sendMail(mailOptions);
 };
 
+const sendDeleteAccountDemand = async (email, token) => {
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: email,
+    subject: "Demande de suppression de compte",
+    html: `<p>Nous vous informons que nous avons bien prit en compte votre demande de suppression de compte. Si cette demande n'est pas de votre intitiaive, merci d'ignorer le lien suivant : <a href="http://localhost:5000/users/deleteAccountConfirmation/${token}">Confirmer la suppression</a>. </p>`,
+  };
+
+  await transporter.sendMail(mailOptions);
+};
+
+const sendDeletedAccountConfirmation = async (email) => {
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: email,
+    subject: "Suppression de compte effectué avec succès",
+    html: `<p>Nous vous informons que votre compte a bien été supprimé. </p>`,
+  };
+
+  await transporter.sendMail(mailOptions);
+};
+
+const sendInvalidDeleteToken = async (email) => {
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: email,
+    subject: "Problème lors de la suppresion du compte.",
+    html: `<p>Le temps a expiré ! Veuillez réintroduire votre demande de suppression de compte.</p>`,
+  };
+
+  await transporter.sendMail(mailOptions);
+};
+
 module.exports = {
   sendConfirmationEmail,
   sendValidationAccount,
   sendInvalidEmailToken,
   sendResetPassword,
   sendPasswordChanged,
+  sendDeleteAccountDemand,
+  sendDeletedAccountConfirmation,
+  sendInvalidDeleteToken,
 };

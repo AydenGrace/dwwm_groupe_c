@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema(
     trophies: [{ type: mongoose.Schema.Types.ObjectId, ref: "USER_TROPHIES" }],
     token: String,
     token_password: String,
+    delete_token: String,
   },
   {
     timestamps: true,
