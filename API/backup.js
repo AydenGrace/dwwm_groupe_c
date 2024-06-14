@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const config = require("dotenv").config();
+const cron = require("cron");
 const { default: BackupToolkit } = require("mongodb-backup-toolkit");
 
 const Script = async () => {
   await Backup();
-  process.exit(0);
+  // process.exit(0);
 };
 
 const Backup = async () => {
@@ -22,5 +23,9 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
     Script();
+    cron.schedule("* 30 * * *", () => {
+      console.log("Starting Database Backup !");
+      Script();
+    });
   })
   .catch((e) => console.error(e));
