@@ -35,7 +35,9 @@ describe("Database", () => {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function (err, res) {
+          if (res.status === 400) return done("Mauvais Email et/ou Password");
           if (err) return done(res.body.error);
+
           assert.notEqual(res.body.message, "Mauvais Email et/ou Password");
           return done();
         });
@@ -52,6 +54,7 @@ describe("Database", () => {
         .expect(200)
         .end(function (err, res) {
           if (err) return done(err);
+
           return done();
         });
     });
