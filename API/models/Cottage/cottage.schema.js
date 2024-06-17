@@ -11,6 +11,11 @@ const cottageSchema = new mongoose.Schema(
     nb_max_person: { type: Number, required: true },
     images: [{ type: String }],
     tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "COTTAGE_TAG" }],
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "USER",
+      required: true,
+    },
   },
   {
     timestamps: true,

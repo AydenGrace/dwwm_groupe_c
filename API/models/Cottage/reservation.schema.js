@@ -14,6 +14,10 @@ const reservationSchema = new mongoose.Schema(
     nb_days: { type: Number },
     total_price: { type: Number, required: true },
     is_Validated: { type: Boolean },
+    reduction: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "GIFTCARD",
+    },
   },
   {
     timestamps: true,
