@@ -74,7 +74,7 @@ const updateInterest = async (req, res) => {
   try {
     const IsNewExist = await Interest.findOne({ value });
     const IsOldExist = await Interest.findOne({ value: reference });
-    if (IsNewExist && IsOldExist && IsNewExist._id != IsOldExist._id) {
+    if (IsNewExist && IsOldExist && !IsNewExist._id.equals(IsOldExist._id)) {
       res.status(500).json({
         error: "Can't change by another interest name that already exist.",
       });

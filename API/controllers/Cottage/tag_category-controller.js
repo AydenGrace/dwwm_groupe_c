@@ -74,7 +74,7 @@ const updateTagCategory = async (req, res) => {
   try {
     const IsNewExist = await TagCategory.findOne({ value });
     const IsOldExist = await TagCategory.findOne({ value: reference });
-    if (IsNewExist && IsOldExist && IsNewExist._id != IsOldExist._id) {
+    if (IsNewExist && IsOldExist && !IsNewExist._id.equals(IsOldExist._id)) {
       res.status(500).json({
         error: "Can't change by another tag category name that already exist.",
       });

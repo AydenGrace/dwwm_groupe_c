@@ -74,12 +74,10 @@ const updateLanguage = async (req, res) => {
   try {
     const IsNewExist = await Language.findOne({ value });
     const IsOldExist = await Language.findOne({ value: reference });
-    if (IsNewExist && IsOldExist && IsNewExist._id != IsOldExist._id) {
-      res
-        .status(500)
-        .json({
-          error: "Can't change by another language name that already exist.",
-        });
+    if (IsNewExist && IsOldExist && !IsNewExist._id.equals(IsOldExist._id)) {
+      res.status(500).json({
+        error: "Can't change by another language name that already exist.",
+      });
       return;
     }
 

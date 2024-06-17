@@ -80,7 +80,7 @@ const updateTag = async (req, res) => {
   try {
     const IsNewExist = await Tag.findOne({ value });
     const IsOldExist = await Tag.findOne({ value: reference });
-    if (IsNewExist && IsOldExist && IsNewExist._id != IsOldExist._id) {
+    if (IsNewExist && IsOldExist && !IsNewExist._id.equals(IsOldExist._id)) {
       res.status(500).json({
         error: "Can't change by another tag name that already exist.",
       });

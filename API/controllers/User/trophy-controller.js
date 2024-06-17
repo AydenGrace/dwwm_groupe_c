@@ -75,7 +75,7 @@ const updateTrophy = async (req, res) => {
   try {
     const IsNewExist = await Trophy.findOne({ value });
     const IsOldExist = await Trophy.findOne({ value: reference });
-    if (IsNewExist && IsOldExist && IsNewExist._id != IsOldExist._id) {
+    if (IsNewExist && IsOldExist && !IsNewExist._id.equals(IsOldExist._id)) {
       res.status(500).json({
         error: "Can't change by another trophy name that already exist.",
       });
