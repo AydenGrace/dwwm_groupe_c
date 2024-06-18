@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema(
       { type: mongoose.Schema.Types.ObjectId, ref: "USER_INTERESTS" },
     ],
     trophies: [{ type: mongoose.Schema.Types.ObjectId, ref: "USER_TROPHIES" }],
+    favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "COTTAGE" }],
     token: String,
     token_password: String,
     delete_token: String,

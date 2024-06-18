@@ -11,6 +11,7 @@ const {
   getbyEmail,
   addInterest,
   addLanguage,
+  toggleFavorite,
 } = require("../../controllers/User/user-controller");
 
 const router = require("express").Router();
@@ -38,5 +39,7 @@ router.patch("/addInterest", addInterest);
 router.patch("/addLanguage", addLanguage);
 
 router.get("/get", getbyEmail);
+
+router.patch("/favorite", toggleFavorite);
 
 module.exports = router;

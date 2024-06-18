@@ -2,6 +2,7 @@ const User = require("../../models/User/user.schema");
 const Trophy = require("../../models/User/trophy.schema");
 const Language = require("../../models/User/language.schema");
 const Interest = require("../../models/User/interest.schema");
+const Cottage = require("../../models/Cottage/cottage.schema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {
@@ -341,6 +342,31 @@ const getbyEmail = async (req, res) => {
   }
 };
 
+const toggleFavorite = async (req, res) => {
+  const { cottageId, _id } = req.body;
+  try {
+    const isUserExist = await User.findOne({ _id });
+    if (!isUserExist) {
+      res.status(500).json({ message: "User not found" });
+      return;
+    }
+    const isCottageExist = await Cottage.findOne({ _id: cottageId });
+    if (!isCottageExist) {
+      res.status(500).json({ message: "Cottage not found" });
+      return;
+    }
+    if (isUserExist.favorites.find((cot) => cot.equals(cottageId))) {
+      await User.findOneAndUpdate({ _id }, { $pull: { favorites: cottageId } });
+      res.json({ message: "Favorite removed" });
+    } else {
+      await User.findOneAndUpdate({ _id }, { $push: { favorites: cottageId } });
+      res.json({ message: "Favorite added" });
+    }
+  } catch (err) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
 module.exports = {
   signupUser,
   verifyMail,
@@ -354,4 +380,5 @@ module.exports = {
   getbyEmail,
   addInterest,
   addLanguage,
+  toggleFavorite,
 };
