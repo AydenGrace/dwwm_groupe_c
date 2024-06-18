@@ -14,6 +14,8 @@ const tagRoutes = require("./Cottage/tag");
 
 const giftcardRoutes = require("./Reduction/giftcard");
 
+const messageRoutes = require("./Message/messages");
+
 router.use("/users", userRoutes);
 router.use("/trophy", trophyRoutes);
 router.use("/interest", interestRoutes);
@@ -27,5 +29,7 @@ router.use("/reservation", reservationRoutes);
 router.use("/tag", tagRoutes);
 
 router.use("/giftcard", giftcardRoutes);
+
+router.use("/message", messageRoutes);
 
 module.exports = router;
