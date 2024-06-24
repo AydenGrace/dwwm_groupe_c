@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./HomePage.module.scss";
-import Upload from "../assets/components/upload/Upload";
-import { TitleContext } from "../contexts/TitleContext";
+import Upload from "../../assets/components/upload/Upload";
+import { TitleContext } from "../../contexts/TitleContext";
+import Landing from "./components/landing/Landing";
 
 export default function HomePage() {
   const { setTitle } = useContext(TitleContext);
@@ -10,9 +11,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className={`w-100 h-100 f-center flex-column`}>
-      <h1 className="mega">HomePage</h1>
-      <Upload />
-    </div>
+    <>
+      <Landing />
+    </>
   );
 }

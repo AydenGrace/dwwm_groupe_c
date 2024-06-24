@@ -76,8 +76,28 @@
   width: 100%;
 }
 
+.mw-100 {
+  min-width: 100%;
+}
+
 .mw-300 {
   min-width: 300px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
 }
 
 .container {
