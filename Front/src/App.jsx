@@ -1,12 +1,15 @@
 import styles from "./App.module.scss";
 
 import { Outlet } from "react-router-dom";
+import TitleProvider from "./providers/TitleProvider";
 
 function App() {
   return (
-    <div>
-      <Outlet />
-    </div>
+    <>
+      <TitleProvider>
+        <Outlet />
+      </TitleProvider>
+    </>
   );
 }
 

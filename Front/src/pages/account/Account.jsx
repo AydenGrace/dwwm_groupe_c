@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
-import styles from "./Login.module.scss";
+import styles from "./Account.module.scss";
 import { TitleContext } from "../../contexts/TitleContext";
 
-export default function Login() {
+export default function Account() {
   const { setTitle } = useContext(TitleContext);
   useEffect(() => {
-    setTitle("Connexion");
+    setTitle("Mon Compte");
   }, []);
-  return <div>Login</div>;
+  return <div className="AccountPage">Account</div>;
 }
