@@ -13,7 +13,12 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "browser-image-compression": "^2.0.2",
+    "firebase": "^10.12.2",
+    "sass": "^1.77.6",
+    "webp-converter": "^2.3.3",
+    "webp-converter-browser": "^1.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

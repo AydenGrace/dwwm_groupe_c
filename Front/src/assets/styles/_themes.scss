@@ -1,0 +1,65 @@
+.btn {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: 2px solid var(--primary);
+  &:hover {
+    color: var(--primary);
+    background-color: white;
+  }
+}
+
+.btn-reverse-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: white;
+  &:hover {
+    background-color: var(--primary);
+    color: white;
+    border: 2px solid var(--primary);
+  }
+}
+
+.c-p {
+  color: var(--primary);
+}
+
+.c-r {
+  color: red;
+}
+
+.c-g {
+  color: green;
+}
+
+.c-p {
+  color: var(--primary);
+}
+
+.c-s {
+  color: var(--secondary);
+}
+
+.bg-p {
+  background-color: var(--primary);
+}
+
+.bg-s {
+  background-color: var(--secondary);
+}
+
+.bg-w {
+  background-color: white;
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
