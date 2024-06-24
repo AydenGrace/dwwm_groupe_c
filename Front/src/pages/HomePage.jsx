@@ -1,10 +1,12 @@
 import React from "react";
-import "./HomePage.css"
+import styles from "./HomePage.module.scss";
+import Upload from "../assets/components/upload/Upload";
 
-export default function HomePage(){
-    return(
-        <div className="HomePage">
-            <h2>HomePage</h2>
-        </div> 
-    )
+export default function HomePage() {
+  return (
+    <div className={`w-100 h-100 f-center flex-column`}>
+      <h2>HomePage</h2>
+      <Upload IsLogo={true} />
+    </div>
+  );
 }
