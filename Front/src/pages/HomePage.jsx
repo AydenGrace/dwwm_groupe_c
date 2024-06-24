@@ -5,8 +5,8 @@ import Upload from "../assets/components/upload/Upload";
 export default function HomePage() {
   return (
     <div className={`w-100 h-100 f-center flex-column`}>
-      <h2>HomePage</h2>
-      <Upload IsLogo={true} />
+      <h1 className="mega">HomePage</h1>
+      <Upload />
     </div>
   );
 }

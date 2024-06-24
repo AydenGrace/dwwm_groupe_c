@@ -1,3 +1,5 @@
+@use "./mixins" as mixin;
+
 body {
   margin: 0;
   font-family: var(--font-family);
@@ -13,7 +15,35 @@ h3,
 h4 {
   margin: 0;
   font-family: var(--font-title);
-  color: var(--primary900);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 1.75rem;
+  @include mixin.md-lt {
+    font-size: 1.5rem;
+  }
+}
+h2 {
+  font-size: 1.25rem;
+  @include mixin.md-lt {
+    font-size: 1.15rem;
+  }
+}
+
+.mega {
+  font-size: 8rem;
+  @include mixin.md-lt {
+    font-size: 2.5rem;
+  }
+}
+
+p {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  @include mixin.md-lt {
+    font-size: 0.875rem;
+  }
 }
 
 * {
