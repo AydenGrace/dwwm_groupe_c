@@ -6,6 +6,10 @@ export default function Landing() {
   let index = 0;
   const Slides = [
     {
+      src: "https://firebasestorage.googleapis.com/v0/b/co-gite.appspot.com/o/Images%2Fpexels-aleksey-kuprikov-1883853-355123.webp?alt=media&token=3de9b004-df23-4bfb-b325-3a9be7b9f541",
+      alt: "Co'Gite Slider",
+    },
+    {
       src: "https://firebasestorage.googleapis.com/v0/b/co-gite.appspot.com/o/Images%2Fpexels-pixabay-14741.webp?alt=media&token=f90f956f-451e-4b61-a53b-e927588194a6",
       alt: "Co'Gite Slider",
     },

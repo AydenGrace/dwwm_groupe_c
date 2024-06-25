@@ -1,9 +1,17 @@
+@use "../../../../assets/styles/mixins" as mixin;
+
 .Landing {
-  height: 50vh;
+  height: 60vh;
   overflow-x: hidden;
   padding-left: 100px;
   padding-right: 100px;
-  text-shadow: black 1px 0 10px;
+  text-shadow: black 3px 0 10px;
+  @include mixin.md-lt {
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 100vh;
+    align-items: flex-start;
+  }
 }
 
 .SubTitle {
