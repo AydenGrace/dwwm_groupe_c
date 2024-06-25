@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import Account from "./pages/account/account";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
+import Profile from "./pages/profile/Profile";
 
 export const router = createBrowserRouter([
     {
