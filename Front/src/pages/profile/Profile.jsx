@@ -2,86 +2,86 @@ import "./Profile.css"
 
 export default function Profile() {
     return (
-    <div className="ProfilePage">
-        <div className="NavBar">
-            <h3>NavBar</h3>
-        </div>
-        <div className="ProfileArea">
-            <div className="LeftPanel">
-                <p>PROFIL</p>
-
-                <div className="Avatar">
-                    <p>Avatar</p>
-                </div>
-
-                <div className="Message">
-                    <p>Message</p>
-                </div>
+        <div className="ProfilePage">
+            <div className="NavBar">
+                <p>NavBar</p>
             </div>
-
-            <div className="RightPanel">
-                <div className="RightTopPanel">
-                    <div className="Name">
-                        <h1>John</h1>
-                        <h2>Doe</h2>
-                    </div>
-                    <div className="Edit">
+            <div className="ProfilBody">
+                <div className="LeftPanel">
+                    <p>PROFIL</p>
+                    <img alt="Avatar" />
+                    <button>
+                        Message
+                    </button>
+                </div>
+                <div className="RightPanel">
+                    <div className="Top">
+                        <div className="Name">
+                            <p className="FirstName">John</p>
+                            <p className="LastName">Doe</p>
+                        </div>
                         <button>Editer le profil</button>
                     </div>
-                </div>
-
-                <div className="RightCenterPanel">
-                    <div className="Hobbies">
+                    <div className="Middle Hobbies">
                         <p>Centres d'intérêts</p>
 
                         <div className="Checkboxes">
-                            <div class="Mer">
+                            <div className="Mer">
                                 <input type="checkbox" name="Mer" id="Mer" />
-                                <label for="Mer">LA MER</label>
+                                <label htmlFor="Mer">LA MER</label>
                             </div>
-                            <div class="Ski">
+                            <div className="Ski">
                                 <input type="checkbox" name="Ski" id="Ski" />
-                                <label for="Ski">LE SKI</label>
+                                <label htmlFor="Ski">LE SKI</label>
                             </div>
-                            <div class="Montagne">
+                            <div className="Montagne">
                                 <input type="checkbox" name="Montagne" id="Montagne" />
-                                <label for="Montagne">LA MONTAGNE</label>
+                                <label htmlFor="Montagne">LA MONTAGNE</label>
                             </div>
-                            <div class="Concerts">
+                            <div className="Concerts">
                                 <input type="checkbox" name="Concerts" id="Concerts" />
-                                <label for="Concerts">LES CONCERTS</label>
+                                <label htmlFor="Concerts">LES CONCERTS</label>
                             </div>
-                            <div class="Surf">
+                            <div className="Surf">
                                 <input type="checkbox" name="Surf" id="Surf" />
-                                <label for="Surf">LE SURF</label>
+                                <label htmlFor="Surf">LE SURF</label>
                             </div>
-                            <div class="Foret">
-                                <input type="checkbox" name="Foret" id="Foret" />
-                                <label for="Foret">LA FORET</label>
+                            <div className="htmlForet">
+                                <input type="checkbox" name="htmlForet" id="htmlForet" />
+                                <label htmlFor="htmlForet">LA FORET</label>
                             </div>
-                            <div class="Foule">
+                            <div className="Foule">
                                 <input type="checkbox" name="Foule" id="Foule" />
-                                <label for="Foule">LA FOULE</label>
+                                <label htmlFor="Foule">LA FOULE</label>
                             </div>
-                            <div class="Animaux">
+                            <div className="Animaux">
                                 <input type="checkbox" name="Animaux" id="Animaux" />
-                                <label for="Animaux">LES ANIMAUX</label>
+                                <label htmlFor="Animaux">LES ANIMAUX</label>
                             </div>
-                            <div class="Golf">
+                            <div className="Golf">
                                 <input type="checkbox" name="Golf" id="Golf" />
-                                <label for="Golf">LE GOLF</label>
+                                <label htmlFor="Golf">LE GOLF</label>
                             </div>
-                            <div class="Camping">
+                            <div className="Camping">
                                 <input type="checkbox" name="Camping" id="Camping" />
-                                <label for="Camping">LE CAMPING</label>
+                                <label htmlFor="Camping">LE CAMPING</label>
                             </div>
                         </div>
 
                     </div>
+                    <div className="Bottom">
+                        <p>Récompenses</p>
+                        <div className="Badges">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
     )
 }
