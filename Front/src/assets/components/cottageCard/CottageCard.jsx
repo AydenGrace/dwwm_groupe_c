@@ -19,6 +19,7 @@ export default function CottageCard({ cottage }) {
           "https://firebasestorage.googleapis.com/v0/b/cogite-e6395.appspot.com/o/uploads%2FGite%20de%20test%2Ff9a02b58-16b3-45e2-b612-b7c256199807.webp?alt=media&token=8d57da72-cc43-4491-b861-e484019560a5",
         ],
       };
+
   return (
     <article className={`d-flex flex-column ${styles.Card} p-10`}>
       <Carrousel

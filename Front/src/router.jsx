@@ -5,6 +5,7 @@ import HomePage from "./pages/homepage/HomePage";
 import Account from "./pages/account/Account";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
+import { HomepageLoader } from "./loaders/HomepageLoader";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: HomepageLoader,
         element: <HomePage />,
       },
       {
