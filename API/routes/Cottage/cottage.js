@@ -12,6 +12,12 @@ const router = require("express").Router();
 
 router.get("/", getAll);
 
+router.get("/getPopular", getAll);
+
+router.get("/getNew", getAll);
+
+router.get("/getBest", getAll);
+
 router.get("/getById", getById);
 
 router.get("/getByName", getByName);
