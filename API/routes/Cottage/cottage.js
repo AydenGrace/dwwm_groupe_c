@@ -1,22 +1,27 @@
 const {
   getAll,
+  getAllPreviews,
   addCottage,
   getById,
   getByName,
   updateCottage,
   deleteCottageByName,
   deleteCottageById,
+  getPopularPreviews,
+  getNewsPreviews,
 } = require("../../controllers/Cottage/cottage-controller");
 
 const router = require("express").Router();
 
 router.get("/", getAll);
 
-router.get("/getPopular", getAll);
+router.get("/previews", getAllPreviews);
 
-router.get("/getNew", getAll);
+router.get("/getPopular", getPopularPreviews);
 
-router.get("/getBest", getAll);
+router.get("/getNew", getNewsPreviews);
+
+router.get("/getBest", getPopularPreviews);
 
 router.get("/getById", getById);
 

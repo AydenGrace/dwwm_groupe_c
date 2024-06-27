@@ -5,6 +5,50 @@ const getAll = async (req, res) => {
   res.json(all);
 };
 
+const getAllPreviews = async (req, res) => {
+  const all = await Cottage.find(
+    {},
+    {
+      name: 1,
+      rating: 1,
+      address: 1,
+      price_per_night: 1,
+      images: 1,
+    }
+  );
+  res.json(all);
+};
+
+const getPopularPreviews = async (req, res) => {
+  const all = await Cottage.find(
+    {},
+    ["name", "rating", "address", "price_per_night", "images"],
+    {
+      skip: 0,
+      limit: 5,
+      sort: {
+        rating: -1,
+      },
+    }
+  );
+  res.json(all);
+};
+
+const getNewsPreviews = async (req, res) => {
+  const all = await Cottage.find(
+    {},
+    ["name", "rating", "address", "price_per_night", "images"],
+    {
+      skip: 0,
+      limit: 5,
+      sort: {
+        createdAt: -1,
+      },
+    }
+  );
+  res.json(all);
+};
+
 const addCottage = async (req, res) => {
   console.log(req.body);
   const {
@@ -142,4 +186,7 @@ module.exports = {
   updateCottage,
   deleteCottageByName,
   deleteCottageById,
+  getAllPreviews,
+  getPopularPreviews,
+  getNewsPreviews,
 };
