@@ -25,10 +25,7 @@ h1 {
   }
 }
 h2 {
-  font-size: 1.25rem;
-  @include mixin.md-lt {
-    font-size: 1.15rem;
-  }
+  font-size: 1.5rem;
 }
 
 .mega {

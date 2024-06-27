@@ -4,6 +4,7 @@
   justify-content: start;
   align-items: center;
   border-radius: 25px;
+  cursor: pointer;
   // border: 1px solid black;
 }
 
@@ -23,7 +24,6 @@
   align-items: flex-start;
   justify-content: center;
   gap: 0px;
-  cursor: pointer;
   p {
     margin: 0;
   }

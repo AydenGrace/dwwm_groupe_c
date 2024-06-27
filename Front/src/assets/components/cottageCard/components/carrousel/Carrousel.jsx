@@ -70,24 +70,24 @@ export default function Carrousel({ slides, isFavorite, id }) {
       <div className={`${styles.Controllers}`}>
         {favorite ? (
           <div
-            className={`fa-solid fa-heart fa-xl c-p ${styles.Heart}`}
+            className={`fa-solid fa-heart fa-xl c-r ${styles.Heart}`}
             onClick={() => toggleFavorite()}
           ></div>
         ) : (
           <div
-            className={`fa-regular fa-heart fa-xl c-p ${styles.Heart}`}
+            className={`fa-regular fa-heart fa-xl c-w ${styles.Heart}`}
             onClick={() => toggleFavorite()}
           ></div>
         )}
         {seeLeft && (
           <div
-            className={`fa-solid fa-circle-left fa-xl ${styles.Arrow} ${styles.LeftArrow} c-p`}
+            className={`fa-solid fa-circle-left fa-xl ${styles.Arrow} ${styles.LeftArrow}`}
             onClick={() => handleArrowClick(false)}
           ></div>
         )}
         {seeRight && (
           <div
-            className={`fa-solid fa-circle-right fa-xl ${styles.Arrow} ${styles.RightArrow} c-p`}
+            className={`fa-solid fa-circle-right fa-xl ${styles.Arrow} ${styles.RightArrow}`}
             onClick={() => handleArrowClick(true)}
           ></div>
         )}
