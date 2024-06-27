@@ -113,6 +113,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 overflow-x: scroll;
+                margin-top: 20px;
                 div{
                     border: 1px solid black;
                     width: 75px;
