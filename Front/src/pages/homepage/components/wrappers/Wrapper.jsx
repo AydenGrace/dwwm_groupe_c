@@ -6,13 +6,14 @@ export default function Wrapper({ title, request }) {
   const createFetchRequest = () => {
     let fetchString = import.meta.env.VITE_BACKEND;
     switch (request) {
-      case 0: //Tendances
-        break;
       case 1: //Meilleurs notes
+        fetchString += "getBest";
         break;
       case 2: //Plus recents
+        fetchString += "getNew";
         break;
-      default:
+      default: //Tendances
+        fetchString += "getPopular";
         break;
     }
     return fetchString;

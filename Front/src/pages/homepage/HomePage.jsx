@@ -16,8 +16,8 @@ export default function HomePage() {
     <>
       <Landing />
       <Wrapper title={"Les Tendances"} />
-      <Wrapper title={"Les Mieux Notés"} />
-      <Wrapper title={"Les Plus Récents"} />
+      <Wrapper title={"Les Mieux Notés"} request={1} />
+      <Wrapper title={"Les Plus Récents"} request={2} />
     </>
   );
 }
