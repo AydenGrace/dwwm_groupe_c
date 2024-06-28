@@ -1,0 +1,57 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.footer {
+  background-color: var(--primary);
+  width: 100%;
+  color: white;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-top: 20px;
+  @include mixin.sm-lt {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p,
+  ul {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer_column {
+  margin: 10px;
+  text-align: center;
+  width: auto;
+  @include mixin.sm-lt {
+    width: 100%;
+    margin: 25px 0;
+  }
+}
+
+.footer_copyright {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  border-top: 1px solid white;
+  border-top-width: 1;
+  padding: 20px;
+}

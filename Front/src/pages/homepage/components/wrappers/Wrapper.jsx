@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CottageCard from "../../../../assets/components/cottageCard/CottageCard";
+import CottageCard from "../../../../components/cottageCard/CottageCard";
 import styles from "./Wrapper.module.scss";
 
 export default function Wrapper({ title, datas }) {

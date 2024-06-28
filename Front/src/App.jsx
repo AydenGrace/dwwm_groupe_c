@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import TitleProvider from "./providers/TitleProvider";
 import UserProvider from "./providers/UserProvider";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <Outlet />
           </TitleProvider>
         </main>
-        {/* FOOTER ICI */}
+        <Footer />
         <ScrollRestoration />
       </UserProvider>
     </>
