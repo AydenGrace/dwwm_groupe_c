@@ -5,7 +5,11 @@
   overflow-x: hidden;
   padding-left: 100px;
   padding-right: 100px;
-  text-shadow: black 3px 0 10px;
+  h1,
+  h2 {
+    text-shadow: black 3px 0 10px;
+  }
+
   @include mixin.md-lt {
     padding-left: 10%;
     padding-right: 10%;

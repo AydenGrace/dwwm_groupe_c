@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Landing.module.scss";
 import BackgroundSlider from "./components/BackgroundSlider";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   let index = 0;
@@ -37,7 +38,9 @@ export default function Landing() {
       <h2 className={`c-s ${styles.SubTitle} mb-10`}>
         N’hésitez plus, nous Co’Gîtons pour vous !
       </h2>
-      <button className="btn btn-primary">DÉCOUVREZ NOTRE CONCEPT</button>
+      <Link className="btn btn-primary" to={"/concept"}>
+        Découvrez notre concept
+      </Link>
     </section>
   );
 }

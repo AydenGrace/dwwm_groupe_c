@@ -6,6 +6,7 @@ export default function Wrapper({ title, datas }) {
   return (
     <section className={`${styles.Section}`}>
       <h2 className="c-p">{title}</h2>
+      <hr />
       <div className={`w-100 d-flex justify-content-center ${styles.Wrapper}`}>
         {datas.map((item, idx) => {
           return <CottageCard key={idx} cottage={item} />;

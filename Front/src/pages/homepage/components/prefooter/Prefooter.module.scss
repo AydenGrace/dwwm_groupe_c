@@ -1,0 +1,33 @@
+@use "../../../../assets//styles/mixins" as mixin;
+
+.section {
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/co-gite.appspot.com/o/Images%2Fpexels-skyler-ewing-266953-4818015-min.webp?alt=media&token=7e34e50a-a574-4d96-b5a6-58934f544580");
+  padding: 100px;
+  padding-right: 40%;
+  @include mixin.md-lt {
+    padding-right: 0;
+  }
+  @include mixin.sm-lt {
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+  h2 {
+    font-size: 4rem;
+    text-shadow: 0px 0px 10px black;
+    @include mixin.sm-lt {
+      font-size: 2.5rem;
+    }
+  }
+  hr {
+    color: white;
+    border-top: 10px solid #fff;
+    width: 50%;
+    margin: 0;
+    margin-top: 10px;
+  }
+}

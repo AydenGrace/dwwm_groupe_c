@@ -6,13 +6,13 @@
   font-family: var(--font-title);
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-primary {
   background-color: var(--primary);
   color: white;
   border: 2px solid var(--primary);
-  text-transform: capitalize;
   &:hover {
     color: var(--primary);
     background-color: white;
@@ -23,11 +23,10 @@
   border: 2px solid var(--primary);
   color: var(--primary);
   background-color: white;
-  text-transform: capitalize;
   &:hover {
     background-color: var(--primary);
     color: white;
-    border: 2px solid var(--primary);
+    border: 2px solid white;
   }
 }
 

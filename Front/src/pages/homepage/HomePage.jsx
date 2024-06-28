@@ -6,6 +6,8 @@ import Landing from "./components/landing/Landing";
 import CottageCard from "../../components/cottageCard/CottageCard";
 import Wrapper from "./components/wrappers/Wrapper";
 import { Link, useLoaderData } from "react-router-dom";
+import Valeurs from "./components/valeurs/Valeurs";
+import Prefooter from "./components/prefooter/Prefooter";
 
 export default function HomePage() {
   const { setTitle } = useContext(TitleContext);
@@ -23,6 +25,8 @@ export default function HomePage() {
       <Wrapper title={"Les Tendances"} datas={populars} />
       <Wrapper title={"Les Mieux Notés"} datas={bests} />
       <Wrapper title={"Les Plus Récents"} datas={news} />
+      <Valeurs />
+      <Prefooter />
     </>
   );
 }
