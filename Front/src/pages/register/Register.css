@@ -1,3 +1,11 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+h2{
+      font-family: "Roboto", sans-serif;
+}
+
 a{
     text-decoration: none;
 }
@@ -30,7 +38,7 @@ a{
     .Form{
         border: 1px solid #000000;
         border-radius: 15px;
-        width: 400px;
+        width: 450px;
         
         .Title{
             border-bottom: 1px solid #000000;
@@ -58,7 +66,7 @@ a{
                 padding-top: 30px;
                 gap: 10px;
                 input{
-                    width: 200px;
+                    width: 250px;
                 }
             }
 
@@ -68,10 +76,11 @@ a{
                 padding-top: 30px;
                 gap: 10px;
                 input{
-                    width: 200px;
+                    width: 250px;
                 }
             }
-            .CGU{
+            @media (min-width : 400px) {
+                .CGU{
                 display: flex;
                 flex-direction: row;
                 padding-top: 50px;
@@ -80,6 +89,7 @@ a{
                     height: 20px;
                     margin-right: 15px;
                 }
+            }
             }
 
             .AlreadyAccount{
@@ -128,4 +138,46 @@ a{
     }
   }
 
+}
+
+@media (max-width : 400px) {
+    input{
+        height: 30px;
+    }
+    .RegisterPage{
+
+        .NavBar{
+            display: none;
+        }
+
+        .RegisterArea{
+                width: 100vw;
+                height: 100vh;
+
+            .Form{
+                width: 100vw;
+                height: 100vh;
+                border: none;
+
+                .Title{
+                    height: 75px;
+                }
+
+                
+                .CGU{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+                    margin-left: 30px;                    
+                }
+
+                .Submit{
+                    margin-bottom: 70px;
+                }
+            }
+        }
+
+
+    }
 }
