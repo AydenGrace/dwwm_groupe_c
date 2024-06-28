@@ -38,8 +38,8 @@ export default function Landing() {
       <h2 className={`c-s ${styles.SubTitle} mb-10`}>
         N’hésitez plus, nous Co’Gîtons pour vous !
       </h2>
-      <Link className="btn btn-primary" to={"/concept"}>
-        Découvrez notre concept
+      <Link className="btn btn-primary" to={"/search"}>
+        Découvrez nos Gîtes
       </Link>
     </section>
   );
