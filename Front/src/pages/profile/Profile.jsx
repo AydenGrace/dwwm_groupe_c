@@ -9,8 +9,8 @@ export default function Profile() {
             <div className="ProfilBody">
                 <div className="LeftPanel">
                     <p>PROFIL</p>
-                    <img alt="Avatar" />
-                    <button>
+                    <img src="Avatar Gîte.webp" alt="Avatar" />
+                    <button className="MessageButton">
                         Message
                     </button>
                 </div>
@@ -19,6 +19,10 @@ export default function Profile() {
                         <div className="Name">
                             <p className="FirstName">John</p>
                             <p className="LastName">Doe</p>
+                        </div>
+                        <div className="NumMail">
+                            <p>tel : 00.00.00.00.00</p>
+                            <p>mail : 00@gmail.com</p>
                         </div>
                         <button>Editer le profil</button>
                     </div>
@@ -72,6 +76,8 @@ export default function Profile() {
                     <div className="Bottom">
                         <p>Récompenses</p>
                         <div className="Badges">
+                        <div></div>
+                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
