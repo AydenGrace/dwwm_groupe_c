@@ -1,0 +1,32 @@
+/* src > components > ToggleButton.css*/
+
+.toggle-button {
+  width: 49px;
+  height: 24px;
+  border-radius: 15px;
+  background-color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #3e3489;
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Transitions pour le cercle */
+}
+
+.toggle-button.active {
+  background-color: lightgray;
+}
+
+.toggle-button.active .toggle-circle {
+  transform: translateX(-23px);
+  background-color: white;
+}

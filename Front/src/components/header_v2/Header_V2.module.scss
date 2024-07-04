@@ -1,0 +1,170 @@
+@use "../../assets//styles/mixins" as mixin;
+
+.container {
+  background-color: var(--primary);
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+}
+
+.upperDiv {
+  padding: 10px;
+}
+
+.lowerDiv {
+  display: none;
+  padding: 0px 10px;
+  @include mixin.sm-lt {
+    display: flex;
+  }
+}
+
+.left {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.middle {
+  align-items: center;
+  justify-content: center;
+  @include mixin.sm-lt {
+    display: none;
+  }
+}
+
+.right {
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.logo {
+  max-height: 40px;
+  margin-right: 15px;
+}
+
+.naviguation {
+  background-color: white;
+  padding: 10px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.mobileNav {
+  display: none;
+  background-color: var(--primary);
+  justify-content: space-between;
+  z-index: 4;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  padding-top: 25px;
+  @include mixin.sm-lt {
+    display: flex;
+  }
+}
+
+.mobileButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 20px;
+  width: 100%;
+  text-decoration: none;
+  justify-content: flex-end;
+  p {
+    margin: 0;
+  }
+}
+
+.sideMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 25px 10px;
+  transition: all 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  color: white;
+  min-width: 200px;
+  height: 100vh;
+  transform: translateX(150%);
+  z-index: 5;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.menuContainer {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  align-items: center;
+  text-align: center;
+
+  a {
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    &:visited {
+      color: white;
+    }
+  }
+}
+
+.connect {
+  background-color: white;
+  border-radius: 10px;
+  color: var(--primary);
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  &:visited {
+    color: var(--primary);
+  }
+  &:hover {
+    color: white;
+    background-color: var(--primary);
+    border: 1.5px solid white;
+  }
+}
+
+.disconnect {
+  background-color: white;
+  border-radius: 10px;
+  color: rgb(212, 46, 46);
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  &:visited {
+    color: rgb(212, 46, 46);
+  }
+  &:hover {
+    color: white;
+    background-color: rgb(212, 46, 46);
+  }
+}
+
+.overlay {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}

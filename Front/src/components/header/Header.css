@@ -1,0 +1,70 @@
+/* src > components > header.css */
+header {
+  background-color: #3e3489;
+  padding: 10px 20px;
+  position: relative;
+  p {
+    color: #ffffff;
+    margin: 0 10px;
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+}
+
+.right-group {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  max-height: 40px;
+  margin-right: 15px;
+}
+
+.button-navigation {
+  background-color: #ffffff;
+  border-radius: 100px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.search-bar-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+@media (max-width: 846px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .TbWorld {
+    display: none;
+  }
+
+  .left-group {
+    margin-bottom: 10px;
+  }
+
+  .right-group {
+    margin-bottom: 10px;
+  }
+
+  .search-bar-container {
+    margin: 10px 0;
+    position: static;
+    transform: none;
+  }
+}

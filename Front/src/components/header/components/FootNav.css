@@ -1,0 +1,36 @@
+/* src > components > FootNav.css */
+.foot-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3e3489; 
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-item p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+.nav-item:hover {
+    color: #ccc; 
+  }
+
+@media (max-width: 846px) {
+  .foot-nav {
+    display: flex;
+  }
+}

@@ -11,17 +11,18 @@ const Footer = () => {
       label: "Politique de Confidentialité",
       path: "/politique-confidentialite",
     },
-    { label: "Plan du Site", path: "/plan-du-site" },
     { label: "Fonctionnement du Site", path: "/fonctionnement-du-site" },
     {
       label: "Informations sur l'Entreprise",
       path: "/informations-entreprise",
     },
+    { label: "Plan du Site", path: "/plan-du-site" },
   ];
 
   const navigationLinks = [
     { label: "Accueil", path: "/" },
-    { label: "Recherche", path: "/recherche" },
+    { label: "Recherche", path: "/search" },
+    { label: "Concept", path: "/concept" },
     { label: "Carte Cadeau", path: "/carte-cadeau" },
     { label: "Mettre en Ligne mon Gîte", path: "/mettre-en-ligne" },
     { label: "Centre d'Aide", path: "/centre-aide" },
