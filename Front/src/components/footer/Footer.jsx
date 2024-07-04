@@ -6,26 +6,26 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const importantLinks = [
-    { label: "Conditions Générales", path: "/conditions-generales" },
+    { label: "Conditions Générales", path: "/legals" },
     {
       label: "Politique de Confidentialité",
-      path: "/politique-confidentialite",
+      path: "/privacy",
     },
-    { label: "Fonctionnement du Site", path: "/fonctionnement-du-site" },
+    { label: "Fonctionnement du Site", path: "/help_center" },
     {
       label: "Informations sur l'Entreprise",
-      path: "/informations-entreprise",
+      path: "/enterprise",
     },
-    { label: "Plan du Site", path: "/plan-du-site" },
+    { label: "Plan du Site", path: "/sitemap" },
   ];
 
   const navigationLinks = [
     { label: "Accueil", path: "/" },
     { label: "Recherche", path: "/search" },
     { label: "Concept", path: "/concept" },
-    { label: "Carte Cadeau", path: "/carte-cadeau" },
-    { label: "Mettre en Ligne mon Gîte", path: "/mettre-en-ligne" },
-    { label: "Centre d'Aide", path: "/centre-aide" },
+    { label: "Carte Cadeau", path: "/gift_card" },
+    { label: "Mettre en Ligne mon Gîte", path: "/set_online" },
+    { label: "Centre d'Aide", path: "/help_center" },
   ];
 
   return (

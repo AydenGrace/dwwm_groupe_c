@@ -8,12 +8,15 @@ import Login from "./pages/login/Login";
 import { HomepageLoader } from "./loaders/HomepageLoader";
 import Search from "./pages/search/Search";
 import Concept from "./pages/concept/Concept";
+import Details from "./pages/details/Details";
+import { DetailsLoader } from "./loaders/DetailsLoader";
+import { getCottageById } from "./apis/Cottages";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -39,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "details/:id",
+        element: <Details />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },

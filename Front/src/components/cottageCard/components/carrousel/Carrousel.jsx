@@ -8,12 +8,14 @@ export default function Carrousel({ slides, isFavorite, id }) {
   const [seeRight, setSeeRight] = useState(true);
   //   const id = Math.floor(Math.random() * 1000000);
 
-  const handleDotClick = async (idx) => {
+  const handleDotClick = async (e, idx) => {
+    e.stopPropagation();
     setCurrent(idx);
     changePage(idx);
   };
 
-  const handleArrowClick = async (isRight) => {
+  const handleArrowClick = async (e, isRight) => {
+    e.stopPropagation();
     if (isRight) {
       changePage(current + 1);
       setCurrent(current + 1);
@@ -61,7 +63,8 @@ export default function Carrousel({ slides, isFavorite, id }) {
     setDotVisibility(idx);
   };
 
-  const toggleFavorite = () => {
+  const toggleFavorite = (e) => {
+    e.stopPropagation();
     setFavorite(!favorite);
   };
 
@@ -71,24 +74,24 @@ export default function Carrousel({ slides, isFavorite, id }) {
         {favorite ? (
           <div
             className={`fa-solid fa-heart fa-xl c-r ${styles.Heart}`}
-            onClick={() => toggleFavorite()}
+            onClick={(e) => toggleFavorite(e)}
           ></div>
         ) : (
           <div
             className={`fa-regular fa-heart fa-xl c-w ${styles.Heart}`}
-            onClick={() => toggleFavorite()}
+            onClick={(e) => toggleFavorite(e)}
           ></div>
         )}
         {seeLeft && (
           <div
             className={`fa-solid fa-circle-left fa-xl ${styles.Arrow} ${styles.LeftArrow}`}
-            onClick={() => handleArrowClick(false)}
+            onClick={(e) => handleArrowClick(e, false)}
           ></div>
         )}
         {seeRight && (
           <div
             className={`fa-solid fa-circle-right fa-xl ${styles.Arrow} ${styles.RightArrow}`}
-            onClick={() => handleArrowClick(true)}
+            onClick={(e) => handleArrowClick(e, true)}
           ></div>
         )}
 
@@ -100,8 +103,8 @@ export default function Carrousel({ slides, isFavorite, id }) {
                   className={`${styles.Dot} bg-p ${styles.DotActive}`}
                   key={`Dot_${id}_${idx}`}
                   id={`Dot_${id}_${idx}`}
-                  onClick={() => {
-                    handleDotClick(idx);
+                  onClick={(e) => {
+                    handleDotClick(e, idx);
                   }}
                 ></div>
               );
@@ -111,8 +114,8 @@ export default function Carrousel({ slides, isFavorite, id }) {
                 className={`${styles.Dot} bg-p`}
                 key={`Dot_${id}_${idx}`}
                 id={`Dot_${id}_${idx}`}
-                onClick={() => {
-                  handleDotClick(idx);
+                onClick={(e) => {
+                  handleDotClick(e, idx);
                 }}
               ></div>
             );

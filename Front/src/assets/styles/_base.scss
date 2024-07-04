@@ -41,6 +41,7 @@ h3 {
 p {
   font-family: var(--font-family);
   font-size: 1rem;
+  margin: 0;
   @include mixin.md-lt {
     font-size: 0.875rem;
   }
