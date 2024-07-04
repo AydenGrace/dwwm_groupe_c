@@ -23,7 +23,7 @@ router.get("/getNew", getNewsPreviews);
 
 router.get("/getBest", getPopularPreviews);
 
-router.get("/getById", getById);
+router.post("/getById", getById);
 
 router.get("/getByName", getByName);
 
