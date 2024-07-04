@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./CottageCard.module.scss";
 import Carrousel from "./components/carrousel/Carrousel";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function CottageCard({ cottage }) {
+  const navigate = useNavigate();
   const temp = cottage
     ? cottage
     : {
@@ -20,8 +22,15 @@ export default function CottageCard({ cottage }) {
         ],
       };
 
+  const handleClick = () => {
+    navigate(`/details/${cottage._id}`);
+  };
+
   return (
-    <article className={`d-flex flex-column ${styles.Card} p-10`}>
+    <article
+      className={`d-flex flex-column ${styles.Card} p-10`}
+      onClick={handleClick}
+    >
       <Carrousel
         slides={temp.images}
         id={Math.floor(Math.random() * 1000000)}

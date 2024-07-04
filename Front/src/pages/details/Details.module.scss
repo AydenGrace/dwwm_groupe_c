@@ -1,0 +1,64 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.container {
+  min-height: 100vh;
+}
+
+.headerSep {
+  height: 67px;
+  margin-bottom: 20px;
+  @include mixin.sm-lt {
+    height: 135px;
+  }
+}
+
+.backContainer {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  a {
+    text-decoration: none;
+    color: black;
+    &:visited {
+      color: black;
+    }
+  }
+}
+
+.back {
+  gap: 10px;
+}
+
+.centerContainer {
+  padding: 0 20%;
+}
+
+.Heart {
+  cursor: pointer;
+}
+
+.gallery {
+  gap: 10px;
+}
+
+.img {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.small_img {
+  width: 45%;
+  height: 0;
+  padding-bottom: 49%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.galleryWrap {
+  gap: 10px;
+  margin-bottom: 10px;
+}

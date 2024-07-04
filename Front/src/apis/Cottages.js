@@ -36,3 +36,23 @@ export async function getBestCottage() {
     console.log(e);
   }
 }
+
+export async function getCottageById(_id) {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND}cottage/getById`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ _id }),
+      }
+    );
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}

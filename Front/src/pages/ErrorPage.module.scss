@@ -1,0 +1,51 @@
+@use "../assets/styles/mixins" as mixin;
+
+.page {
+  width: 100%;
+  height: 100vh;
+  section {
+    height: 100%;
+  }
+}
+
+.right {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/co-gite.appspot.com/o/Images%2Fcountry%20hous.webp?alt=media&token=468c583a-1de1-460a-9d78-aee02676b728");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include mixin.sm-lt {
+    display: none;
+  }
+}
+
+.left {
+  position: relative;
+  height: 100%;
+  padding-left: 100px;
+  justify-content: center;
+  @include mixin.sm-lt {
+    padding: 0 20px;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/co-gite.appspot.com/o/Images%2Fcountry%20hous.webp?alt=media&token=468c583a-1de1-460a-9d78-aee02676b728");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.4;
+    }
+  }
+  h2 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}

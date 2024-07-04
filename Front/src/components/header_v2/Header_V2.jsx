@@ -10,7 +10,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { UserContext } from "../../contexts/UserContext";
 
 export default function Header_V2() {
-  const navigate = useNavigate();
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const { user } = useContext(UserContext);
@@ -100,35 +99,35 @@ export default function Header_V2() {
             </Link>
             {user && (
               <>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
+                <Link to={"/profile"} onClick={handleCloseSideMenuClick}>
                   mon profil
                 </Link>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
+                <Link to={"/notifications"} onClick={handleCloseSideMenuClick}>
                   Notifications
                 </Link>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
+                <Link to={"/history"} onClick={handleCloseSideMenuClick}>
                   Historique de réservation
                 </Link>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
+                <Link to={"/cottages"} onClick={handleCloseSideMenuClick}>
                   Mes logements
                 </Link>
               </>
             )}
-            <Link to={"/"} onClick={handleCloseSideMenuClick}>
+            <Link to={"/gift_card"} onClick={handleCloseSideMenuClick}>
               Carte cadeau
             </Link>
             {!user && (
-              <Link to={"/"} onClick={handleCloseSideMenuClick}>
+              <Link to={"/set_online"} onClick={handleCloseSideMenuClick}>
                 Mettre en ligne mon Gîte
               </Link>
             )}
-            <Link to={"/"} onClick={handleCloseSideMenuClick}>
+            <Link to={"/help_center"} onClick={handleCloseSideMenuClick}>
               Centre d'aide
             </Link>
           </div>
           {user ? (
             <Link
-              to={"/"}
+              to={"/disconnect"}
               className={`${styles.disconnect}`}
               onClick={handleCloseSideMenuClick}
             >
@@ -136,7 +135,7 @@ export default function Header_V2() {
             </Link>
           ) : (
             <Link
-              to={"/"}
+              to={"/login"}
               className={`${styles.connect}`}
               onClick={handleCloseSideMenuClick}
             >
@@ -145,11 +144,11 @@ export default function Header_V2() {
           )}
         </nav>
         <nav className={`d-flex ${styles.mobileNav}`}>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/search"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-magnifying-glass fa-xl`}></i>
             <p>Recherche</p>
           </Link>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/search#map"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-map-location-dot fa-xl`}></i>
             <p>Carte</p>
           </Link>
@@ -157,11 +156,11 @@ export default function Header_V2() {
             <i className={`fa-solid fa-house fa-xl`}></i>
             <p>Accueil</p>
           </Link>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/favorites"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-heart fa-xl`}></i>
             <p>Favoris</p>
           </Link>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/messages"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-paper-plane fa-xl`}></i>
             <p>Messages</p>
           </Link>
