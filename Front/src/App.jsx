@@ -1,10 +1,7 @@
-import styles from "./App.module.scss";
-
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import TitleProvider from "./providers/TitleProvider";
 import UserProvider from "./providers/UserProvider";
 import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
 import Header_V2 from "./components/header_v2/Header_V2";
 
 function App() {
