@@ -8,9 +8,10 @@ import LanguageModal from "../header/components/LanguageModal";
 import { CgProfile } from "react-icons/cg";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { UserContext } from "../../contexts/UserContext";
+import { useTranslation } from 'react-i18next'
 
 export default function Header_V2() {
-  const navigate = useNavigate();
+  const { t } = useTranslation("global");
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const { user } = useContext(UserContext);
@@ -87,7 +88,7 @@ export default function Header_V2() {
           isOpen={isLanguageModalOpen}
           onClose={() => setIsLanguageModalOpen(false)}
         />
-        <nav className={`${styles.sideMenu}`} id="sideMenu">
+        <nav className={`${styles.sideMenu}`} id="sideMenu"> 
           <div className="d-flex justify-content-end">
             <i
               className={`fa-solid fa-xmark fa-2x ${styles.pointer}`}
@@ -96,74 +97,74 @@ export default function Header_V2() {
           </div>
           <div className={`${styles.menuContainer}`}>
             <Link to={"/"} onClick={handleCloseSideMenuClick}>
-              Accueil
+              {t("header.home")}
             </Link>
             {user && (
               <>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
-                  mon profil
+                <Link to={"/profile"} onClick={handleCloseSideMenuClick}>
+                  {t("header.profil")}
                 </Link>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
-                  Notifications
+                <Link to={"/notifications"} onClick={handleCloseSideMenuClick}>
+                  {t("header.notification")}
                 </Link>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
-                  Historique de réservation
+                <Link to={"/history"} onClick={handleCloseSideMenuClick}>
+                  {t("header.history")}
                 </Link>
-                <Link to={"/"} onClick={handleCloseSideMenuClick}>
-                  Mes logements
+                <Link to={"/cottages"} onClick={handleCloseSideMenuClick}>
+                  {t("header.mylodging")}
                 </Link>
               </>
             )}
-            <Link to={"/"} onClick={handleCloseSideMenuClick}>
-              Carte cadeau
+            <Link to={"/gift_card"} onClick={handleCloseSideMenuClick}>
+              {t("header.giftcard")}
             </Link>
             {!user && (
-              <Link to={"/"} onClick={handleCloseSideMenuClick}>
-                Mettre en ligne mon Gîte
+              <Link to={"/set_online"} onClick={handleCloseSideMenuClick}>
+                {t("header.putlodging")}
               </Link>
             )}
-            <Link to={"/"} onClick={handleCloseSideMenuClick}>
-              Centre d'aide
+            <Link to={"/help_center"} onClick={handleCloseSideMenuClick}>
+              {t("header.helpcenter")}
             </Link>
           </div>
           {user ? (
             <Link
-              to={"/"}
+              to={"/disconnect"}
               className={`${styles.disconnect}`}
               onClick={handleCloseSideMenuClick}
             >
-              Déconnexion
+              {t("header.logout")}
             </Link>
           ) : (
             <Link
-              to={"/"}
+              to={"/login"}
               className={`${styles.connect}`}
               onClick={handleCloseSideMenuClick}
             >
-              Connexion / Inscription
+              {t("header.login")}
             </Link>
           )}
         </nav>
         <nav className={`d-flex ${styles.mobileNav}`}>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/search"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-magnifying-glass fa-xl`}></i>
-            <p>Recherche</p>
+            <p>{t("header.search")}</p>
           </Link>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/search#map"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-map-location-dot fa-xl`}></i>
             <p>Carte</p>
           </Link>
           <Link to={"/"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-house fa-xl`}></i>
-            <p>Accueil</p>
+            <p>{t("header.home")}</p>
           </Link>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/favorites"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-heart fa-xl`}></i>
-            <p>Favoris</p>
+            <p>{t("header.favorite")}</p>
           </Link>
-          <Link to={"/"} className={`${styles.mobileButton}`}>
+          <Link to={"/messages"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-paper-plane fa-xl`}></i>
-            <p>Messages</p>
+            <p>{t("header.message")}</p>
           </Link>
         </nav>
         <div

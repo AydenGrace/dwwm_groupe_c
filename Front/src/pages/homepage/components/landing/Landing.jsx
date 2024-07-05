@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import styles from "./Landing.module.scss";
 import BackgroundSlider from "./components/BackgroundSlider";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 export default function Landing() {
+  const { t } = useTranslation("global");
   let index = 0;
   const Slides = [
     {
@@ -36,10 +38,10 @@ export default function Landing() {
       <BackgroundSlider slides={Slides} />
       <h1 className="c-s mega">Co'Gîte</h1>
       <h2 className={`c-s ${styles.SubTitle} mb-10`}>
-        N’hésitez plus, nous Co’Gîtons pour vous !
+        {t("home.title")}
       </h2>
       <Link className="btn btn-primary" to={"/search"}>
-        Découvrez nos Gîtes
+        {t("home.boutontitle")}
       </Link>
     </section>
   );

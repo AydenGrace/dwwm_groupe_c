@@ -10,7 +10,9 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import LanguageModal from "./components/LanguageModal";
 import MenuModal from "./components/MenuModal";
 
+
 const Header = () => {
+
   const navigate = useNavigate();
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);

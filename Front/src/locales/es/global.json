@@ -1,0 +1,50 @@
+{
+ "header": {
+  "chooselanguage": "Elige lengua:",
+  "close":"Cerca",
+  "search":"buscar",
+  "home":"Hogar",
+  "message":"Mensaje",
+  "profil":"Mi perfil",
+  "favorite":"Favoritos",
+  "concept":"Nuestro concepto",
+  "notification":"Notificaciones",
+  "history":"Historial de reservas",
+  "mylodging":"mi alojamiento",
+  "giftcard":"tarjeta de regalo",
+  "putlodging":"Poner mi alojamiento en línea",
+  "helpcenter":"Centro de ayuda",
+  "navtitle":"Navegación",
+  "explore":"Explorar",
+  "login":"Iniciar sesión / Registrarse",
+  "logout":"Cerrar sesión",
+  "map":"Mapa del sitio",
+  "contact":"contacto",
+  "copyright":"Derechos de autor 2024 © Co'Gite"
+ },
+ "home": {
+  "title": "¡No lo dudes más, pensamos por ti!",
+  "boutontitle": "Descubra nuestros alojamientos",
+  "categorietendance":"Tendencias",
+  "categoriemieuxnotes":"Los más valorados",
+  "categorierecents":"El mas reciente",
+  "encartnosvaleurs":"Nuestros valores",
+  "encart1":"Seguridad",
+  "encart2":"Sencillez",
+  "encart3":"Amabilidad",
+  "encarttext1":"Estar seguro en tu alojamiento, contar con un propietario o inquilino confiable es esencial para nosotros.",
+  "encarttext2":"Hacer que la búsqueda y el alquiler de alojamiento sea sencillo y accesible para todos es esencial para nosotros.",
+  "encarttext3":"Nos esforzamos por verificar que nuestros usuarios sean acogedores, confiables y responsables.",
+  "decouvrez":"Descubra nuestro concepto",
+  "accroche1":"Nos esforzamos por verificar que nuestros usuarios sean acogedores, confiables y responsables.",
+  "accroche2":"Descubra paisajes sublimes realizando un viaje a alojamientos insólitos, acogedores y cálidos."
+  },
+ "footer": {
+  "accroche":"No busques más, nosotros Co'Gîtons para ti",
+  "linktitle":"Links importantes",
+  "link1":"Términos y condiciones",
+  "link2":"Privacy Policy",
+  "link3":"política de privacidad",
+  "link4":"Información de la empresa"
+ }
+}

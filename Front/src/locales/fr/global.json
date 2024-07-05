@@ -1,0 +1,50 @@
+{
+ "header": {
+  "chooselanguage": "Choisissez votre langue:",
+  "close":"Fermer",
+  "search":"Rechercher",
+  "home":"Accueil",
+  "message":"Message",
+  "profil":"Mon profil",
+  "favorite":"Favoris",
+  "concept":"notre concept",
+  "notification":"Notifications",
+  "history":"Historique de réservation",
+  "mylodging":"Mes logements",
+  "giftcard":"Carte cadeau",
+  "putlodging":"Mettre en ligne mon Gîte",
+  "helpcenter":"Centre d'aide",
+  "navtitle":"Navigation",
+  "explore":"Explorer",
+  "login":"connexion/inscription",
+  "logout":"Déconnexion",
+  "map":"Plan du site",
+  "contact":"contact",
+  "copyright":"Copyright 2024 © Co'Gite"
+ },
+ "home": {
+  "title": "N’hésitez plus, nous Co’Gîtons pour vous !",
+  "boutontitle": "Découvrez nos gîtes",
+  "categorietendance":"Les tendances",
+  "categoriemieuxnotes":"Les mieux notés",
+  "categorierecents":"Les plus récents",
+  "encartnosvaleurs":"Nos valeurs",
+  "encart1":"Sécurité",
+  "encart2":"Simplicité",
+  "encart3":"Convivialité",
+  "encarttext1":"Être en sécurité dans son gîte, avoir un propriétaire ou locataire fiable c’est essentiel pour nous.",
+  "encarttext2":"Rendre la recherche et la location de gîtes simple et accessible à tous est primordiale pour nous.",
+  "encarttext3":"Nous nous efforçons de vérifier nos utilisateurs pour qu’ils soient accueillant, de confiance et fiable.",
+  "decouvrez":"Découvre notre concept",
+  "accroche1":"Nous nous efforçons de vérifier nos utilisateurs pour qu’ils soient accueillant, de confiance et fiable.",
+  "accroche2":"Découvrez des paysages sublimes en partant en voyage dans des gîtes insolites, accueillant et chaleureux."
+ },
+ "footer": {
+  "accroche":"Ne cherchez plus, nous Co'Gîtons pour vous",
+  "linktitle":"Liens importants",
+  "link1":"Conditions générales",
+  "link2":"Politique de Confidentialité",
+  "link3":"Fonctionnement du site",
+  "link4":"informations sur l'entreprise"
+ }
+}

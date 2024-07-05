@@ -1,0 +1,16 @@
+.upper {
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.icon {
+  transition: all 0.3s ease-out;
+}
+
+.lower {
+  max-height: 0px;
+  height: auto;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
