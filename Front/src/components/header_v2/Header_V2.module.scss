@@ -16,6 +16,7 @@
 .lowerDiv {
   display: none;
   padding: 0px 10px;
+  padding-bottom: 10px;
   @include mixin.sm-lt {
     display: flex;
   }
