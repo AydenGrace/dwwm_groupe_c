@@ -108,6 +108,18 @@ const getById = async (req, res) => {
   }
 };
 
+const getDetailsById = async (req, res) => {
+  const { _id } = req.body;
+  try {
+    const cott = await Cottage.findOne({ _id })
+      .populate({ path: "tags", populate: { path: "category" } })
+      .populate("owner");
+    res.json(cott);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 const updateCottage = async (req, res) => {
   console.log(req.body);
   const {
@@ -189,4 +201,5 @@ module.exports = {
   getAllPreviews,
   getPopularPreviews,
   getNewsPreviews,
+  getDetailsById,
 };

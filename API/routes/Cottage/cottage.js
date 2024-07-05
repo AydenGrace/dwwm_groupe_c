@@ -9,6 +9,7 @@ const {
   deleteCottageById,
   getPopularPreviews,
   getNewsPreviews,
+  getDetailsById,
 } = require("../../controllers/Cottage/cottage-controller");
 
 const router = require("express").Router();
@@ -24,6 +25,8 @@ router.get("/getNew", getNewsPreviews);
 router.get("/getBest", getPopularPreviews);
 
 router.post("/getById", getById);
+
+router.post("/getDetailsById", getDetailsById);
 
 router.get("/getByName", getByName);
 
