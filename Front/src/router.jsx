@@ -1,22 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import ErrorPage from "./pages/ErrorPage";
-import HomePage from "./pages/homepage/HomePage";
-import Account from "./pages/account/Account";
+import Account from "./pages/account/account.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import HomePage from "./pages/homepage/HomePage.jsx";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import { HomepageLoader } from "./loaders/HomepageLoader";
 import Search from "./pages/search/Search";
 import Concept from "./pages/concept/Concept";
-import Details from "./pages/details/Details";
-import { DetailsLoader } from "./loaders/DetailsLoader";
-import { getCottageById } from "./apis/Cottages";
+import Profile from "./pages/profile/Profile";
+import AjoutGite from "./pages/AjoutGite/AjoutGite";
+import Details from "./pages/details/Details.jsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -42,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "profile/ajoutgite",
+        element: <AjoutGite />,
       },
       {
         path: "details/:id",
