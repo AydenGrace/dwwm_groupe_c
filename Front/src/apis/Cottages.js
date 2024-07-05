@@ -40,7 +40,7 @@ export async function getBestCottage() {
 export async function getCottageById(_id) {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_BACKEND}cottage/getById`,
+      `${import.meta.env.VITE_BACKEND}cottage/getDetailsById`,
       {
         method: "POST",
         headers: {
