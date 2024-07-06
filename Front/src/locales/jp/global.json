@@ -1,0 +1,50 @@
+{
+ "header": {
+  "chooselanguage": "言語を選択：",
+  "close":"近い",
+  "search":"検索",
+  "home":"家",
+  "message":"家",
+  "profil":"私のプロフィール",
+  "favorite":"お気に入り",
+  "concept":"私たちのコンセプト",
+  "notification":"通知",
+  "history":"予約履歴",
+  "mylodging":"私の宿舎",
+  "giftcard":"ギフトカード",
+  "putlodging":"宿泊先をオンラインに公開する",
+  "helpcenter":"ヘルプセンター",
+  "navtitle":"ナビゲーション",
+  "explore":"探検する",
+  "login":"ログイン / 登録",
+  "logout":"ログアウト",
+  "map":"サイトマップ",
+  "contact":"接触",
+  "copyright":"著作権 2024 © Co'Gite"
+ },
+ "home": {
+  "title": "もう迷わないでください、私たちがあなたのために考えます!",
+  "boutontitle": "宿泊施設を見る",
+  "categorietendance":"傾向",
+  "categoriemieuxnotes":"トップレート",
+  "categorierecents":"最新の",
+  "encartnosvaleurs":"私達の価値",
+  "encart1":"安全",
+  "encart2":"シンプルさ",
+  "encart3":"親しみやすさ",
+  "encarttext1":"お客様の宿泊施設が安全であること、信頼できるオーナーや入居者がいることは、私たちにとって不可欠です。",
+  "encarttext2":"宿泊施設の検索とレンタルを誰もが簡単に利用できるようにする事が、私たちにとって重要です。",
+  "encarttext3":"私たちは、ユーザーが親しみやすく、信頼でき、信頼できるかどうかを確認するよう努めています。",
+  "decouvrez":"私たちのコンセプトをご覧ください",
+  "accroche1":"私たちは、ユーザーが親しみやすく、信頼でき、信頼できるかどうかを確認するよう努めています。",
+  "accroche2":"珍しく、居心地が良く、温かい宿泊施設への旅に出かけて、崇高な風景を発見してください。"
+  },
+ "footer": {
+  "accroche":"もう躊躇しないでください。私たちがあなたのために共同主催します!",
+  "linktitle":"重要なリンク",
+  "link1":"利用規約",
+  "link2":"プライバシーポリシー",
+  "link3":"サイトの仕組み",
+  "link4":"企業情報"
+ }
+}

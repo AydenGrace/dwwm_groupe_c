@@ -3,29 +3,31 @@ import { IoIosMail } from "react-icons/io";
 import { FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
+  const { t } = useTranslation("global");
   const importantLinks = [
-    { label: "Conditions Générales", path: "/legals" },
+    { label: t("footer.link1"), path: "/legals" },
     {
-      label: "Politique de Confidentialité",
+      label: t("footer.link2"),
       path: "/privacy",
     },
-    { label: "Fonctionnement du Site", path: "/help_center" },
+    { label: t("footer.link3"), path: "/help_center" },
     {
-      label: "Informations sur l'Entreprise",
+      label: t("footer.link4"),
       path: "/enterprise",
     },
-    { label: "Plan du Site", path: "/sitemap" },
+    { label: t("header.map"), path: "/sitemap" },
   ];
 
   const navigationLinks = [
-    { label: "Accueil", path: "/" },
-    { label: "Recherche", path: "/search" },
-    { label: "Concept", path: "/concept" },
-    { label: "Carte Cadeau", path: "/gift_card" },
-    { label: "Mettre en Ligne mon Gîte", path: "/set_online" },
-    { label: "Centre d'Aide", path: "/help_center" },
+    { label: t("header.home"), path: "/" },
+    { label: t("header.search"), path: "/search" },
+    { label: t("header.concept"), path: "/concept" },
+    { label: t("header.giftcard"), path: "/gift_card" },
+    { label: t("header.putlodging"), path: "/set_online" },
+    { label: t("header.helpcenter"), path: "/help_center" },
   ];
 
   return (
@@ -39,11 +41,11 @@ const Footer = () => {
           className={`${styles.footer_logo}`}
         />
         <p>
-          Ne cherchez plus, <br /> nous Co'Gîtons pour vous
+          {t("footer.accroche")}
         </p>
       </div>
       <div className={`${styles.footer_column}`}>
-        <h2 className="c-w">Contact</h2>
+        <h2 className="c-w">{t("header.contact")}</h2>
         <p>
           <IoIosMail /> contact@cogite.com
         </p>
@@ -55,7 +57,7 @@ const Footer = () => {
         </p>
       </div>
       <div className={`${styles.footer_column}`}>
-        <h2 className="c-w">Liens Importants</h2>
+        <h2 className="c-w">{t("footer.linktitle")}</h2>
         <ul>
           {importantLinks.map((link) => (
             <li key={link.label}>
@@ -65,7 +67,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className={`${styles.footer_column}`}>
-        <h2 className="c-w">Navigation</h2>
+        <h2 className="c-w">{t("header.navtitle")}</h2>
         <ul>
           {navigationLinks.map((link) => (
             <li key={link.label}>
@@ -74,7 +76,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-      <p className={`${styles.footer_copyright}`}>Copyright 2024 © Co'Gite</p>
+      <p className={`${styles.footer_copyright}`}>{t("header.copyright")}</p>
     </footer>
   );
 };

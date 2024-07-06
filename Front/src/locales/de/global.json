@@ -1,0 +1,50 @@
+{
+ "header": {
+  "chooselanguage": "Sprache wählen:",
+  "close":"Schließen",
+  "search":"suchen",
+  "home":"Heim",
+  "message":"Nachricht",
+  "profil":"Mein Profil",
+  "favorite":"Favoriten",
+  "concept":"Unser Konzept",
+  "notification":"Benachrichtigungen",
+  "history":"Buchungsverlauf",
+  "mylodging":"meine Unterkunft",
+  "giftcard":"Geschenkkarte",
+  "putlodging":"Meine Unterkunft online stellen",
+  "helpcenter":"Hilfezentrum",
+  "navtitle":"Navigation",
+  "explore":"Erkunden",
+  "login":"Anmeldung Registrieren",
+  "logout":"Ausloggen",
+  "map":"Seitenverzeichnis",
+  "contact":"Kontakt",
+  "copyright":"Urheberrecht 2024 © Co'Gite"
+ },
+ "home": {
+  "title": "Zögern Sie nicht länger, wir denken für Sie!",
+  "boutontitle": "Entdecken Sie unsere Unterkünfte",
+  "categorietendance":"Tendenzen",
+  "categoriemieuxnotes":"Bestbewertet",
+  "categorierecents":"Der neuesten",
+  "encartnosvaleurs":"Unsere Werte",
+  "encart1":"Sicherheit",
+  "encart2":"Einfachheit",
+  "encart3":"Freundlichkeit",
+  "encarttext1":"Die Sicherheit Ihrer Unterkunft sowie ein verlässlicher Eigentümer bzw. Mieter sind für uns das A und O.",
+  "encarttext2":"Es ist uns wichtig, die Suche und Anmietung einer Unterkunft einfach und für alle zugänglich zu machen.",
+  "encarttext3":"Wir bemühen uns, die Gastfreundlichkeit, Vertrauenswürdigkeit und Zuverlässigkeit unserer Benutzer sicherzustellen.",
+  "decouvrez":"Entdecken Sie unser Konzept",
+  "accroche1":"Wir bemühen uns, die Gastfreundlichkeit, Vertrauenswürdigkeit und Zuverlässigkeit unserer Benutzer sicherzustellen.",
+  "accroche2":"Entdecken Sie erhabene Landschaften bei einem Ausflug zu ungewöhnlichen, einladenden und warmen Unterkünften."
+  },
+ "footer": {
+  "accroche":"Suchen Sie nicht weiter, wir denken für Sie",
+  "linktitle":"Wichtige Links",
+  "link1":"Geschäftsbedingungen",
+  "link2":"Datenschutzrichtlinie",
+  "link3":"So funktioniert die Site",
+  "link4":"Firmeninformation"
+ }
+}

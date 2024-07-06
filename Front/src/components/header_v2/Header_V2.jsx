@@ -8,8 +8,10 @@ import LanguageModal from "../header/components/LanguageModal";
 import { CgProfile } from "react-icons/cg";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { UserContext } from "../../contexts/UserContext";
+import { useTranslation } from 'react-i18next'
 
 export default function Header_V2() {
+  const { t } = useTranslation("global");
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const { user } = useContext(UserContext);
@@ -86,7 +88,7 @@ export default function Header_V2() {
           isOpen={isLanguageModalOpen}
           onClose={() => setIsLanguageModalOpen(false)}
         />
-        <nav className={`${styles.sideMenu}`} id="sideMenu">
+        <nav className={`${styles.sideMenu}`} id="sideMenu"> 
           <div className="d-flex justify-content-end">
             <i
               className={`fa-solid fa-xmark fa-2x ${styles.pointer}`}
@@ -95,34 +97,34 @@ export default function Header_V2() {
           </div>
           <div className={`${styles.menuContainer}`}>
             <Link to={"/"} onClick={handleCloseSideMenuClick}>
-              Accueil
+              {t("header.home")}
             </Link>
             {user && (
               <>
                 <Link to={"/profile"} onClick={handleCloseSideMenuClick}>
-                  mon profil
+                  {t("header.profil")}
                 </Link>
                 <Link to={"/notifications"} onClick={handleCloseSideMenuClick}>
-                  Notifications
+                  {t("header.notification")}
                 </Link>
                 <Link to={"/history"} onClick={handleCloseSideMenuClick}>
-                  Historique de réservation
+                  {t("header.history")}
                 </Link>
                 <Link to={"/cottages"} onClick={handleCloseSideMenuClick}>
-                  Mes logements
+                  {t("header.mylodging")}
                 </Link>
               </>
             )}
             <Link to={"/gift_card"} onClick={handleCloseSideMenuClick}>
-              Carte cadeau
+              {t("header.giftcard")}
             </Link>
             {!user && (
               <Link to={"/set_online"} onClick={handleCloseSideMenuClick}>
-                Mettre en ligne mon Gîte
+                {t("header.putlodging")}
               </Link>
             )}
             <Link to={"/help_center"} onClick={handleCloseSideMenuClick}>
-              Centre d'aide
+              {t("header.helpcenter")}
             </Link>
           </div>
           {user ? (
@@ -131,7 +133,7 @@ export default function Header_V2() {
               className={`${styles.disconnect}`}
               onClick={handleCloseSideMenuClick}
             >
-              Déconnexion
+              {t("header.logout")}
             </Link>
           ) : (
             <Link
@@ -139,14 +141,14 @@ export default function Header_V2() {
               className={`${styles.connect}`}
               onClick={handleCloseSideMenuClick}
             >
-              Connexion / Inscription
+              {t("header.login")}
             </Link>
           )}
         </nav>
         <nav className={`d-flex ${styles.mobileNav}`}>
           <Link to={"/search"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-magnifying-glass fa-xl`}></i>
-            <p>Recherche</p>
+            <p>{t("header.search")}</p>
           </Link>
           <Link to={"/search#map"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-map-location-dot fa-xl`}></i>
@@ -154,15 +156,15 @@ export default function Header_V2() {
           </Link>
           <Link to={"/"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-house fa-xl`}></i>
-            <p>Accueil</p>
+            <p>{t("header.home")}</p>
           </Link>
           <Link to={"/favorites"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-heart fa-xl`}></i>
-            <p>Favoris</p>
+            <p>{t("header.favorite")}</p>
           </Link>
           <Link to={"/messages"} className={`${styles.mobileButton}`}>
             <i className={`fa-solid fa-paper-plane fa-xl`}></i>
-            <p>Messages</p>
+            <p>{t("header.message")}</p>
           </Link>
         </nav>
         <div
