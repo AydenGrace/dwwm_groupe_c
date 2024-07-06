@@ -6,31 +6,29 @@ import { TiHome } from "react-icons/ti";
 import { FaHeart } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
-import { useTranslation } from 'react-i18next'
 
 const FootNav = () => {
-    const { t } = useTranslation("global");
   return (
     <div className="foot-nav">
       <a href="/explorer" className="nav-item">
         <FaSearch />
-        <p>{t("footer.explore")}</p>
+        <p>Explorer</p>
       </a>
       <a href="/carte" className="nav-item">
         <FaMapLocationDot />
-        <p>{t("footer.map")}</p>
+        <p>Carte</p>
       </a>
       <a href="/accueil" className="nav-item">
         <TiHome size={20} />
-        <p>{t("footer.home")}</p>
+        <p>Accueil</p>
       </a>
       <a href="/favoris" className="nav-item">
         <FaHeart />
-        <p>{t("footer.favorite")}</p>
+        <p>Favoris</p>
       </a>
       <a href="/messages" className="nav-item">
         <IoIosSend />
-        <p>{t("footer.message")}</p>
+        <p>Messages</p>
       </a>
     </div>
   );

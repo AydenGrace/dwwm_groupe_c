@@ -8,10 +8,8 @@ import Wrapper from "./components/wrappers/Wrapper";
 import { Link, useLoaderData } from "react-router-dom";
 import Valeurs from "./components/valeurs/Valeurs";
 import Prefooter from "./components/prefooter/Prefooter";
-import { useTranslation } from 'react-i18next'
 
 export default function HomePage() {
-  const { t } = useTranslation("global");
   const { setTitle } = useContext(TitleContext);
   const [populars, setPopulars] = useState(useLoaderData().Populars);
   const [news, setNews] = useState(useLoaderData().News);
@@ -24,9 +22,9 @@ export default function HomePage() {
   return (
     <>
       <Landing />
-      <Wrapper title={t("home.categorietendance")} datas={populars} />
-      <Wrapper title={t("home.categoriemieuxnotes")} datas={bests} />
-      <Wrapper title={t("home.categorierecents")} datas={news} />
+      <Wrapper title={"Les Tendances"} datas={populars} />
+      <Wrapper title={"Les Mieux Notés"} datas={bests} />
+      <Wrapper title={"Les Plus Récents"} datas={news} />
       <Valeurs />
       <Prefooter />
     </>

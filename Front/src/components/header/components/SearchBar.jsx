@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import { IoFilterSharp, IoSearch } from "react-icons/io5";
 import Modal from "react-modal";
 import "./SearchBar.css";
-import { useTranslation } from 'react-i18next';
 
 function SearchBar() {
-  const { t } = useTranslation("global");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -27,7 +25,7 @@ function SearchBar() {
       <input
         type="text"
         className="search-input"
-        placeholder={t("header.search")}
+        placeholder="Rechercher..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

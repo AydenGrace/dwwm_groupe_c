@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "./Valeurs.module.scss";
 import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next'
 
 export default function Valeurs() {
-  const {t } = useTranslation("global");
   return (
     <section
       className={`f-center w-100 bg-p p-20 flex-column ${styles.section}`}
@@ -17,9 +15,10 @@ export default function Valeurs() {
             <i className="fa-solid fa-shield-halved fa-2xl c-w"></i>
           </div>
           <div className={`${styles.description}`}>
-            <h3 className="c-p">{t("home.encart1")}</h3>
+            <h3 className="c-p">Sécurité</h3>
             <p>
-              {t("home.encarttext1")}
+              Être en sécurité dans son gîte, avoir un propriétaire ou locataire
+              fiable c’est essentiel pour nous.
             </p>
           </div>
         </div>
@@ -29,9 +28,10 @@ export default function Valeurs() {
             <i className="fa-solid fa-hot-tub-person fa-2xl c-w"></i>
           </div>
           <div className={`${styles.description}`}>
-            <h3 className="c-p">{t("home.encart2")}</h3>
+            <h3 className="c-p">Simplicité</h3>
             <p>
-              {t("home.encarttext2")}
+              Rendre la recherche et la location de gîtes simple et accessible à
+              tous est primordiale pour nous.
             </p>
           </div>
         </div>
@@ -41,15 +41,16 @@ export default function Valeurs() {
             <i className="fa-solid fa-people-roof fa-2xl c-w"></i>
           </div>
           <div className={`${styles.description}`}>
-            <h3 className="c-p">{t("home.encart3")}</h3>
+            <h3 className="c-p">Convivialité</h3>
             <p>
-              {t("home.encarttext3")}
+              Nous nous efforçons de vérifier nos utilisateurs pour qu’ils
+              soient accueillant, de confiance et fiable.
             </p>
           </div>
         </div>
       </div>
       <Link className="btn btn-reverse-primary" to={"/concept"}>
-        {t("home.decouvrez")}
+        Découvrez notre concept
       </Link>
     </section>
   );
