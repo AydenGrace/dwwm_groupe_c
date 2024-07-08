@@ -1,16 +1,15 @@
+import { useState } from "react";
 import "./Register.css"
+import { Navigate, NavLink } from "react-router-dom";
 
 
 export default function Register(){
+
     return(
         <div className="RegisterPage">
-            
-            <div className="NavBar">
-                <p>NavBar</p>
-            </div>
 
             <div className="RegisterArea">
-                <div className="Form">
+                <form className="Form">
                     <div className="Title">
                         <h2>Inscription</h2>
                     </div>
@@ -21,7 +20,8 @@ export default function Register(){
 
                                     <div className="UserName">
                                         <p>Nom d'utilisateur :</p>
-                                        <input type="text" placeholder="Nom d'utilisateur" />
+                                        <input type="text"
+                                               placeholder="Nom d'utilisateur" />
                                     </div>
 
                                     <div className="Email">
@@ -48,7 +48,7 @@ export default function Register(){
                                 <p>J'accepte les <a href="#">Conditions Générales d'Utilisations</a></p>
                             </div>
                             <div className="AlreadyAccount">
-                                <p><a href="#">Vous possedez déjà un compte ? </a></p>
+                                <NavLink to={"/login"}>Vous possedez déjà un compte ?</NavLink>
                             </div>
 
                             <div className="Submit">
@@ -67,7 +67,7 @@ export default function Register(){
                             </div>
                             
                         </div>
-                </div>
+                </form>
             </div>
         </div> 
     )

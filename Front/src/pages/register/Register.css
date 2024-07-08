@@ -14,18 +14,6 @@ a{
     display: flex;
     flex-direction: column;
     
-  .NavBar{
-    background-color: #3E3489;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    > p{
-        color: white;
-        font-size: 2rem;
-    }
-  }
 
   .RegisterArea{
     display: flex;
@@ -33,11 +21,11 @@ a{
     justify-content: center;
     align-items: center;
 
-    height: calc(100vh - 70px);
 
     .Form{
         border: 1px solid #000000;
         border-radius: 15px;
+        margin-top: 150px;
         width: 450px;
         
         .Title{
@@ -146,18 +134,14 @@ a{
     }
     .RegisterPage{
 
-        .NavBar{
-            display: none;
-        }
 
         .RegisterArea{
                 width: 100vw;
-                height: 100vh;
 
             .Form{
                 width: 100vw;
-                height: 100vh;
                 border: none;
+                margin-top: 125px;
 
                 .Title{
                     height: 75px;
@@ -172,9 +156,14 @@ a{
                     margin-left: 30px;                    
                 }
 
-                .Submit{
-                    margin-bottom: 70px;
+                .AlreadyAccount{
+                    margin: 15px;
                 }
+
+                .Submit{
+                    margin-bottom: 10px;
+                }
+
             }
         }
 

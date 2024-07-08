@@ -1,12 +1,10 @@
 import "./Login.css"
+import { NavLink } from "react-router-dom";
 
 export default function Login(){
     return(
         <div className="LoginPage">
             
-            <div className="NavBar">
-                <p>NavBar</p>
-            </div>
 
             <div className="LoginArea">
                 <div className="Form">
@@ -34,11 +32,13 @@ export default function Login(){
                                 </div>
                             </div>
                             <div className="AlreadyAccount">
-                                <p><a href="#">Vous n'avez pas de compte ? </a></p>
+                                <NavLink to={"/register"}>Vous n'avez pas de compte ?</NavLink>
                             </div>
 
                             <div className="Submit">
-                                <button>Connexion</button>
+                                <a href="#">
+                                    <button>Connexion</button>
+                                </a>
                             </div>
 
                             <div className="Or">
