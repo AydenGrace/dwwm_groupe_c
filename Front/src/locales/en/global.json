@@ -1,0 +1,50 @@
+{
+ "header": {
+  "chooselanguage": "Choose Language:",
+  "close":"Close",
+  "search":"search",
+  "home":"Home",
+  "message":"Message",
+  "profil":"My profil",
+  "favorite":"Favoris",
+  "concept":"our concept",
+  "notification":"Notifications",
+  "history":"Booking History",
+  "mylodging":"my lodgings",
+  "giftcard":"gift card",
+  "putlodging":"Put my lodging online",
+  "helpcenter":"Help Center",
+  "navtitle":"Navigation",
+  "explore":"Explore",
+  "login":"Login / Register",
+  "logout":"Logout",
+  "map":"Sitemap",
+  "contact":"contact",
+  "copyright":"Copyright 2024 © Co'Gite"
+ },
+ "home": {
+  "title": "Don’t hesitate any longer, we’re thinking for you!",
+  "boutontitle": "Discover our lodgings",
+  "categorietendance":"Tendencies",
+  "categoriemieuxnotes":"Top rated",
+  "categorierecents":"The most recent",
+  "encartnosvaleurs":"Our values",
+  "encart1":"Security",
+  "encart2":"Simplicity",
+  "encart3":"Friendliness",
+  "encarttext1":"Being safe in your accommodation, having a reliable owner or tenant is essential for us.",
+  "encarttext2":"Making the search and rental of lodgings simple and accessible to all is essential to us.",
+  "encarttext3":"We strive to verify our users to be welcoming, trustworthy and reliable.",
+  "decouvrez":"Discover our concept",
+  "accroche1":"We strive to verify our users to be welcoming, trustworthy and reliable.",
+  "accroche2":"Discover sublime landscapes by going on a trip to unusual, welcoming and warm lodgings."
+  },
+ "footer": {
+  "accroche":"Look no further, we Co'Gîtons for you",
+  "linktitle":"Important links",
+  "link1":"Terms and conditions",
+  "link2":"Privacy Policy",
+  "link3":"How the site works",
+  "link4":"Company information"
+ }
+}
